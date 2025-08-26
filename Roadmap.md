@@ -72,3 +72,19 @@ Maybe add targets to collect on the way that give you extra throws
 
 
 https://www.youtube.com/watch?v=D9lBhr5gq2s
+
+
+## Tasks
+
+Find Sound Effects
+
+Grass
+Trees and rocks
+
+Arrow Fling Preview
+
+HUD
+Start, Death Screen
+
+Make More Holes
+Rotating animated goal

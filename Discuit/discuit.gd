@@ -2,6 +2,7 @@ extends RigidBody3D
 
 @onready var cam_target: Node3D = $CamTarget
 @onready var cam: Camera3D = $CamTarget/SpringArm3D/Camera3D
+@onready var targeting_arrow = $Arrow
 
 var cam_sens = 0.00025
 
@@ -25,7 +26,15 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_pressed("launch"):
 		fling_power = move_toward(fling_power, max_fling_power, delta)
+		targeting_arrow.visible = true
+		
+		targeting_arrow.global_position = global_position
+		targeting_arrow.global_basis.z = cam_target.global_basis.z
+		targeting_arrow.global_rotation.x = 0
+		targeting_arrow.global_rotation.z = PI/2
+		
 	elif Input.is_action_just_released("launch"):
+		targeting_arrow.visible = false
 		fling(fling_power)
 	else:
 		fling_power = 0
