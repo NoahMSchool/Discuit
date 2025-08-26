@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bvg6oklmnw4vx"
-path="res://.godot/imported/discuit_model1.glb-bcc41bfb910ceeb01480ce5c4afd9628.scn"
+uid="uid://hjdpisputwfq"
+path="res://.godot/imported/biscuit_mug.glb-82cfeea585e5301780bb26b28945083b.scn"
 
 [deps]
 
-source_file="res://discuit_model1.glb"
-dest_files=["res://.godot/imported/discuit_model1.glb-bcc41bfb910ceeb01480ce5c4afd9628.scn"]
+source_file="res://biscuit_mug.glb"
+dest_files=["res://.godot/imported/biscuit_mug.glb-82cfeea585e5301780bb26b28945083b.scn"]
 
 [params]
 

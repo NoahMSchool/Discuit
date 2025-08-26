@@ -1,13 +1,17 @@
 extends RigidBody3D
 
 @onready var cam_target: Node3D = $CamTarget
-@onready var cam: Camera3D = $CamTarget/Camera3D
+@onready var cam: Camera3D = $CamTarget/SpringArm3D/Camera3D
 
 var cam_sens = 0.00025
 
-@export var torque_power = 1
+@export var torque_power = 0.75
 @export var max_fling_power = 2.5
 var fling_power = 0
+
+var cam_follow_speed = 3
+
+var flings_used = 0
 
 
 func _ready() -> void:
@@ -15,9 +19,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	cam_target.global_position.x = lerpf(cam_target.global_position.x, global_position.x, delta*5)
-	cam_target.global_position.y = lerpf(cam_target.global_position.y, global_position.y, delta*5)
-	cam_target.global_position.z = lerpf(cam_target.global_position.z, global_position.z, delta*5)
+	cam_target.global_position.x = lerpf(cam_target.global_position.x, global_position.x, delta*cam_follow_speed)
+	cam_target.global_position.y = lerpf(cam_target.global_position.y, global_position.y, delta*cam_follow_speed)
+	cam_target.global_position.z = lerpf(cam_target.global_position.z, global_position.z, delta*cam_follow_speed)
 
 	if Input.is_action_pressed("launch"):
 		fling_power = move_toward(fling_power, max_fling_power, delta)
@@ -42,6 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func fling(power : float):
+	flings_used += 1
 	var innacuracy = (randf()-0.5) * PI/8
 	var launch_dir = -cam_target.global_basis.z
 	launch_dir.y = 0
@@ -50,4 +55,15 @@ func fling(power : float):
 	launch_dir.rotated(Vector3(0,1,0), innacuracy)
 	
 	apply_central_impulse(launch_dir*power)
+
+
+func reset(position : Vector3):
+	flings_used = 0
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	print("reset")
+	global_position = position
 	
+	
+func die():
+	print("you died")

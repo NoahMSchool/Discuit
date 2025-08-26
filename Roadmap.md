@@ -64,6 +64,11 @@ fling the biscuit until you are happy then try find a regular exit portal to sub
 score is based on squared distance of attributes to target attributes
 
 
+Disc Golf It
+
+Disc golf but you fling a biscuit, try to get to end of cource in least flings
+Maybe add targets to collect on the way that give you extra throws
+
 
 
 https://www.youtube.com/watch?v=D9lBhr5gq2s
