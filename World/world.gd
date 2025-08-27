@@ -4,31 +4,35 @@ extends Node3D
 @onready var discuit_node : RigidBody3D = $Discuit
 @onready var hud: CanvasLayer = $HUD
 
-var holes : Array[PackedScene] = [preload("res://holes/hole_1.tscn"), preload("res://holes/hole_3.tscn")]
+#probably dont need holenum
+var holes : Array[Hole] = [Hole.new("Hilly Hole", 0), Hole.new("Cliffy Canyon", 2),]
+var hole_scenes : Array[PackedScene] = [preload("res://holes/hole_1.tscn"), preload("res://holes/hole_3.tscn"),]
 
-@onready var current_hole_num : int = 1
+@onready var current_hole_num : int = 0
 
 func start_hole(hole_num):
-	hud.update_holenum(hole_num)
-	var new_hole = holes[hole_num].instantiate()
-	#hole_node.add_child(new_hole)
+	while not hole_scenes[hole_num].can_instantiate():
+		hole_num += 1
+		
+	if hole_node.get_child_count() > 0:
+		hole_node.get_children()[0].queue_free()
+	var new_hole = hole_scenes[hole_num].instantiate()
 	hole_node.add_child(new_hole)
 	var hole_start = new_hole.get_node("HoleStart")
-	if hole_start:
-		hole_start.spawn(discuit_node)
-	else:
-		print("spawn failed")
+	hole_start.spawn(discuit_node)
+	hud.update_holenum(hole_num)
+	
 	
 	
 func level_completed(flings_used):
-	start_hole(current_hole_num)
+	start_hole(current_hole_num+1)
 
 func discuit_dead():
 	start_hole(current_hole_num)
 
 
 func _ready() -> void:
-	start_hole(1)
+	start_hole(0)
 
 func use_fling():
 	hud.update_flingcount()

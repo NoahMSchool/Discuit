@@ -1,11 +1,12 @@
-extends Node
+extends Resource
 
+class_name Hole
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var name : String
+@export var hole_num : int
+@export var player_best = INF
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _init(_name : String, _hole_num : int) -> void:
+	name = _name
+	hole_num = _hole_num
+	
