@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctiopolteembd"]
 
-[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://Knewave-Regular.ttf" id="1_j36gi"]
+[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://UserInterface/Knewave-Regular.ttf" id="1_hjchp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si1sr"]
 bg_color = Color(0.4374, 0.54, 0.3348, 1)
@@ -16,7 +16,7 @@ corner_radius_bottom_left = 150
 shadow_size = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_vwmn6"]
-font = ExtResource("1_j36gi")
+font = ExtResource("1_hjchp")
 font_size = 72
 font_color = Color(0.815744, 0.922393, 0.925778, 1)
 shadow_size = 5

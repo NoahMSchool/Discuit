@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddjp64l1uocwt"]
 
-[ext_resource type="Script" path="res://Discuit/hud.gd" id="1_cu26s"]
-[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://Knewave-Regular.ttf" id="1_yiltx"]
-[ext_resource type="LabelSettings" uid="uid://cbda8l5413cgc" path="res://Discuit/blueberry_text.tres" id="2_lumol"]
-[ext_resource type="StyleBox" uid="uid://ccpo42jgccyjc" path="res://Discuit/grassStyleBox.tres" id="4_623k5"]
+[ext_resource type="Script" path="res://UserInterface/hud.gd" id="1_cu26s"]
+[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://UserInterface/Knewave-Regular.ttf" id="1_yiltx"]
+[ext_resource type="LabelSettings" uid="uid://cbda8l5413cgc" path="res://UserInterface/blueberry_text.tres" id="2_lumol"]
+[ext_resource type="StyleBox" uid="uid://ccpo42jgccyjc" path="res://UserInterface/grassStyleBox.tres" id="4_623k5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bht4d"]
 bg_color = Color(0.521579, 0.498189, 0.399623, 0.784314)

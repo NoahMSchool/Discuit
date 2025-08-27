@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cr3k0sjtqygjt"
-path="res://.godot/imported/Knewave-Regular.ttf-5e30dae7e516d3ce94950027e6e527dc.fontdata"
+path="res://.godot/imported/Knewave-Regular.ttf-f14f8c498accd73ce2c2916a11d4486f.fontdata"
 
 [deps]
 
-source_file="res://Knewave-Regular.ttf"
-dest_files=["res://.godot/imported/Knewave-Regular.ttf-5e30dae7e516d3ce94950027e6e527dc.fontdata"]
+source_file="res://UserInterface/Knewave-Regular.ttf"
+dest_files=["res://.godot/imported/Knewave-Regular.ttf-f14f8c498accd73ce2c2916a11d4486f.fontdata"]
 
 [params]
 

@@ -4,25 +4,27 @@ extends Node3D
 @onready var discuit_node : RigidBody3D = $Discuit
 @onready var hud: CanvasLayer = $HUD
 
-var holes : Array[PackedScene] = [preload("res://hole_1.tscn")]
+var holes : Array[PackedScene] = [preload("res://holes/hole_1.tscn"), preload("res://holes/hole_3.tscn")]
 
-@onready var hole_num : int
+@onready var current_hole_num : int = 1
 
-func start_hole(hole):
+func start_hole(hole_num):
 	hud.update_holenum(hole_num)
 	var new_hole = holes[hole_num].instantiate()
 	#hole_node.add_child(new_hole)
 	hole_node.add_child(new_hole)
 	var hole_start = new_hole.get_node("HoleStart")
-	
-	hole_start.spawn(discuit_node)
+	if hole_start:
+		hole_start.spawn(discuit_node)
+	else:
+		print("spawn failed")
 	
 	
 func level_completed(flings_used):
-	start_hole(hole_num)
+	start_hole(current_hole_num)
 
 func discuit_dead():
-	start_hole(hole_num)
+	start_hole(current_hole_num)
 
 
 func _ready() -> void:

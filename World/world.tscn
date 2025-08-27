@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://sk2u0jyf62wm"]
+
+[ext_resource type="Script" path="res://World/world.gd" id="1_uqe84"]
+[ext_resource type="PackedScene" uid="uid://wa1hjtbq3rdt" path="res://Discuit/discuit.tscn" id="1_vpudw"]
+[ext_resource type="PackedScene" uid="uid://ddjp64l1uocwt" path="res://UserInterface/hud.tscn" id="2_3tgl2"]
+[ext_resource type="Script" path="res://World/kill_floor.gd" id="2_m8shm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_linvy"]
+sky_top_color = Color(0.4305, 0.406, 0.7, 1)
+sky_horizon_color = Color(0.513, 0.7323, 0.9, 1)
+sky_energy_multiplier = 1.2
+ground_bottom_color = Color(0.229463, 0.368501, 0.360484, 1)
+ground_horizon_color = Color(0.461538, 0.732723, 0.757392, 1)
+
+[sub_resource type="Sky" id="Sky_jwp4f"]
+sky_material = SubResource("ProceduralSkyMaterial_linvy")
+
+[sub_resource type="Environment" id="Environment_pprw8"]
+background_mode = 2
+sky = SubResource("Sky_jwp4f")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtg12"]
+size = Vector3(100, 10, 150)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6t4vt"]
+size = Vector3(40, 50, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17dp0"]
+size = Vector3(40, 50, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgxea"]
+size = Vector3(1, 50, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1uq1"]
+size = Vector3(1, 50, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04jtx"]
+size = Vector3(40, 1, 60)
+
+[sub_resource type="FogMaterial" id="FogMaterial_y25oi"]
+density = 5.0
+albedo = Color(0.9025, 0.95, 0.941292, 1)
+emission = Color(0.414135, 0.648301, 0.585165, 1)
+
+[node name="World" type="Node3D" groups=["discuit"]]
+script = ExtResource("1_uqe84")
+
+[node name="HUD" parent="." instance=ExtResource("2_3tgl2")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pprw8")
+
+[node name="Discuit" parent="." groups=["discuit"] instance=ExtResource("1_vpudw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="FloorKill" type="Area3D" parent="." groups=["discuit"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("2_m8shm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorKill"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+shape = SubResource("BoxShape3D_dtg12")
+
+[node name="HoleNode" type="Node3D" parent="."]
+
+[node name="Barriers" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="FrontBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 30)
+shape = SubResource("BoxShape3D_6t4vt")
+
+[node name="BackBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -30)
+shape = SubResource("BoxShape3D_17dp0")
+
+[node name="LeftBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 25, 0)
+shape = SubResource("BoxShape3D_qgxea")
+
+[node name="RightBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 25, 0)
+shape = SubResource("BoxShape3D_v1uq1")
+
+[node name="TopBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+shape = SubResource("BoxShape3D_04jtx")
+
+[node name="FogBarriers" type="Node3D" parent="."]
+
+[node name="RightFog" type="FogVolume" parent="FogBarriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
+size = Vector3(2, 2, 60)
+material = SubResource("FogMaterial_y25oi")
+
+[node name="BackFog" type="FogVolume" parent="FogBarriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+size = Vector3(40, 2, 2)
+material = SubResource("FogMaterial_y25oi")
+
+[node name="LeftFog" type="FogVolume" parent="FogBarriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 0)
+size = Vector3(2, 2, 60)
+material = SubResource("FogMaterial_y25oi")
+
+[node name="FrontFog" type="FogVolume" parent="FogBarriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 30)
+size = Vector3(40, 2, 2)
+material = SubResource("FogMaterial_y25oi")
+
+[connection signal="use_fling" from="Discuit" to="." method="_on_discuit_use_fling"]
+[connection signal="body_entered" from="FloorKill" to="FloorKill" method="_on_body_entered"]

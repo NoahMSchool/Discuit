@@ -5,8 +5,9 @@
 [ext_resource type="Material" uid="uid://c5y27e4hkw1eb" path="res://Discuit/arrow_mat.tres" id="3_wmyan"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb3lu"]
-friction = 0.5
-bounce = 0.6
+friction = 0.6
+rough = true
+bounce = 0.3
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_lxem1"]
 height = 0.05
