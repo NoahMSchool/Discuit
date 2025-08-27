@@ -6,8 +6,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb3lu"]
 friction = 0.5
-rough = true
-bounce = 0.3
+bounce = 0.6
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_lxem1"]
 height = 0.05

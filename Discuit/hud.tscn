@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddjp64l1uocwt"]
+
+[ext_resource type="Script" path="res://Discuit/hud.gd" id="1_cu26s"]
+[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://Knewave-Regular.ttf" id="1_yiltx"]
+[ext_resource type="LabelSettings" uid="uid://cbda8l5413cgc" path="res://Discuit/blueberry_text.tres" id="2_lumol"]
+[ext_resource type="StyleBox" uid="uid://ccpo42jgccyjc" path="res://Discuit/grassStyleBox.tres" id="4_623k5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bht4d"]
+bg_color = Color(0.521579, 0.498189, 0.399623, 0.784314)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.41, 0.328273, 0.1968, 1)
+corner_radius_top_left = 85
+corner_radius_top_right = 85
+corner_radius_bottom_right = 85
+corner_radius_bottom_left = 85
+
+[sub_resource type="LabelSettings" id="LabelSettings_m460q"]
+font = ExtResource("1_yiltx")
+font_size = 108
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 11
+shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yc22o"]
+bg_color = Color(0.521579, 0.498189, 0.399623, 0.784314)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.41, 0.328273, 0.1968, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_cu26s")
+
+[node name="FlingCount" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="CounterPanel" type="Panel" parent="FlingCount"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -265.0
+offset_top = 50.0
+offset_right = -90.0
+offset_bottom = 225.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bht4d")
+
+[node name="CounterLabel" type="Label" parent="FlingCount/CounterPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5
+"
+label_settings = SubResource("LabelSettings_m460q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPanel" type="Panel" parent="FlingCount"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -265.0
+offset_top = 225.0
+offset_right = -90.0
+offset_bottom = 275.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yc22o")
+
+[node name="TextLabel" type="Label" parent="FlingCount/TextPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -20.0
+offset_right = 66.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Flings Used"
+label_settings = ExtResource("2_lumol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoleNum" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CounterPanel" type="Panel" parent="HoleNum"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 185.0
+offset_bottom = 225.0
+grow_horizontal = 0
+theme_override_styles/panel = ExtResource("4_623k5")
+
+[node name="CounterLabel" type="Label" parent="HoleNum/CounterPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -84.5
+offset_right = 32.5
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5
+"
+label_settings = SubResource("LabelSettings_m460q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPanel" type="Panel" parent="HoleNum"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 225.0
+offset_right = 185.0
+offset_bottom = 275.0
+grow_horizontal = 0
+theme_override_styles/panel = ExtResource("4_623k5")
+
+[node name="TextLabel" type="Label" parent="HoleNum/TextPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -20.0
+offset_right = 66.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hole Number
+"
+label_settings = ExtResource("2_lumol")
+horizontal_alignment = 1
+vertical_alignment = 1

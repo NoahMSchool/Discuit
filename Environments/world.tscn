@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://sk2u0jyf62wm"]
+[gd_scene load_steps=9 format=3 uid="uid://sk2u0jyf62wm"]
 
 [ext_resource type="Script" path="res://Environments/world.gd" id="1_uqe84"]
 [ext_resource type="PackedScene" uid="uid://wa1hjtbq3rdt" path="res://Discuit/discuit.tscn" id="1_vpudw"]
+[ext_resource type="PackedScene" uid="uid://ddjp64l1uocwt" path="res://Discuit/hud.tscn" id="2_3tgl2"]
 [ext_resource type="Script" path="res://Environments/kill_floor.gd" id="2_m8shm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_linvy"]
@@ -19,12 +20,16 @@ background_mode = 2
 sky = SubResource("Sky_jwp4f")
 tonemap_mode = 2
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dtg12"]
 size = Vector3(100, 10, 150)
 
 [node name="World" type="Node3D" groups=["discuit"]]
 script = ExtResource("1_uqe84")
+
+[node name="HUD" parent="." instance=ExtResource("2_3tgl2")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -36,14 +41,15 @@ environment = SubResource("Environment_pprw8")
 [node name="Discuit" parent="." groups=["discuit"] instance=ExtResource("1_vpudw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
-[node name="Area3D" type="Area3D" parent="." groups=["discuit"]]
+[node name="FloorKill" type="Area3D" parent="." groups=["discuit"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("2_m8shm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorKill"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 shape = SubResource("BoxShape3D_dtg12")
 
 [node name="HoleNode" type="Node3D" parent="."]
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="use_fling" from="Discuit" to="." method="_on_discuit_use_fling"]
+[connection signal="body_entered" from="FloorKill" to="FloorKill" method="_on_body_entered"]

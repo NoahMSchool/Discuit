@@ -1,4 +1,27 @@
-[gd_scene format=3 uid="uid://ctiopolteembd"]
+[gd_scene load_steps=4 format=3 uid="uid://ctiopolteembd"]
+
+[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://Knewave-Regular.ttf" id="1_j36gi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si1sr"]
+bg_color = Color(0.4374, 0.54, 0.3348, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.308652, 0.368483, 0.20578, 1)
+corner_radius_top_left = 300
+corner_radius_top_right = 150
+corner_radius_bottom_right = 300
+corner_radius_bottom_left = 150
+shadow_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwmn6"]
+font = ExtResource("1_j36gi")
+font_size = 72
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 5
+shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
+shadow_offset = Vector2(2, 1)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -12,11 +35,32 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1200.0
 offset_bottom = 700.0
-color = Color(0.25, 0.149417, 0.0725, 1)
+color = Color(0.53049, 0.398579, 0.244085, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="ColorRect"]
 layout_mode = 0
-offset_right = 241.0
-offset_bottom = 23.0
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 450.0
+offset_bottom = 500.0
+rotation = -0.261799
+theme_override_styles/panel = SubResource("StyleBoxFlat_si1sr")
+
+[node name="Label" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -56.5
+offset_right = 120.5
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Discuit
 "
+label_settings = SubResource("LabelSettings_vwmn6")
+horizontal_alignment = 1
+vertical_alignment = 1

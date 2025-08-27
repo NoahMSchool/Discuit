@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cbda8l5413cgc"]
+
+[ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://Knewave-Regular.ttf" id="1_rhb82"]
+
+[resource]
+font = ExtResource("1_rhb82")
+font_size = 25
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 5
+shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
+shadow_offset = Vector2(2, 1)

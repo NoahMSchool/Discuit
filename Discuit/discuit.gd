@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+signal use_fling
+
 @onready var cam_target: Node3D = $CamTarget
 @onready var cam: Camera3D = $CamTarget/SpringArm3D/Camera3D
 @onready var targeting_arrow = $Arrow
@@ -55,6 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func fling(power : float):
+	use_fling.emit(flings_used)
 	flings_used += 1
 	var innacuracy = (randf()-0.5) * PI/8
 	var launch_dir = -cam_target.global_basis.z

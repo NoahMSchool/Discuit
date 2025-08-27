@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dg75ml66ravb3"
-path="res://.godot/imported/TreesRocksNature.glb-5df0a03c8cbf891affdba7afc497e2c1.scn"
+uid="uid://dytodeii2qo7a"
+path="res://.godot/imported/course2.glb-86048748008075c433bfb8b3562910c1.scn"
 
 [deps]
 
-source_file="res://TreesRocksNature.glb"
-dest_files=["res://.godot/imported/TreesRocksNature.glb-5df0a03c8cbf891affdba7afc497e2c1.scn"]
+source_file="res://Environments/course2.glb"
+dest_files=["res://.godot/imported/course2.glb-86048748008075c433bfb8b3562910c1.scn"]
 
 [params]
 
