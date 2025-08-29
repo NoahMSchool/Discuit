@@ -611,9 +611,10 @@ mesh = SubResource("ArrayMesh_wh2np")
 skeleton = NodePath("")
 
 [node name="HoleStart" parent="." instance=ExtResource("1_7b300")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.7, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.03744, -25)
 
 [node name="Nature" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
 [node name="Tree1" type="StaticBody3D" parent="Nature"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0433, 0.370463, 0.00828552)
@@ -628,7 +629,7 @@ mesh = SubResource("ArrayMesh_m70hx")
 skeleton = NodePath("")
 
 [node name="Tree5" type="StaticBody3D" parent="Nature"]
-transform = Transform3D(0.104528, 0.223719, 0.969032, 0, 0.97437, -0.224951, -0.994522, 0.0235138, 0.101849, -13.4953, 2.00027, -24.0872)
+transform = Transform3D(0.104528, 0.223719, 0.969032, 0, 0.97437, -0.224951, -0.994522, 0.0235138, 0.101849, -13.4953, 3.34815, -24.0872)
 collision_layer = 4
 collision_mask = 0
 
@@ -708,7 +709,7 @@ mesh = SubResource("ArrayMesh_ibnwk")
 skeleton = NodePath("")
 
 [node name="Rock1" type="StaticBody3D" parent="Nature"]
-transform = Transform3D(0.951072, 0.288215, 0.111333, 0.221007, -0.886409, 0.406737, 0.215914, -0.36223, -0.906736, -8.00168, 0.373769, -12.9909)
+transform = Transform3D(0.866199, 0.499656, 0.00665446, 0.450646, -0.78685, 0.421646, 0.215914, -0.36223, -0.906736, -6.71517, 0.628554, -12.9909)
 collision_layer = 4
 collision_mask = 0
 
@@ -720,7 +721,7 @@ mesh = SubResource("ArrayMesh_q7hbn")
 skeleton = NodePath("")
 
 [node name="Rock4" type="StaticBody3D" parent="Nature"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.595, 0.684722, -23.525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.595, 1.51332, -23.525)
 collision_layer = 4
 collision_mask = 0
 
@@ -744,7 +745,7 @@ mesh = SubResource("ArrayMesh_3ywhp")
 skeleton = NodePath("")
 
 [node name="Rock5" type="StaticBody3D" parent="Nature"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38317, 0.784777, -9.61233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83028, 1.10896, -8.99544)
 collision_layer = 4
 collision_mask = 0
 
@@ -784,20 +785,34 @@ mesh = SubResource("BoxMesh_l6ws2")
 surface_material_override/0 = ExtResource("3_7rsuc")
 
 [node name="TargetBasket" parent="." instance=ExtResource("2_3kyy0")]
-transform = Transform3D(-3.78552e-08, -0.258819, -0.965926, 2.18557e-08, 0.965926, -0.258819, 1, -3.09086e-08, -3.09086e-08, 0, 1, 5)
+transform = Transform3D(-3.78552e-08, -0.258819, -0.965926, 2.18557e-08, 0.965926, -0.258819, 1, -3.09086e-08, -3.09086e-08, 0, 2, 5)
 
 [node name="Toppings" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.066, 0)
 
 [node name="Topping" parent="Toppings" instance=ExtResource("4_fpl4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648371, 1.58986, -17.4894)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5329, 0.866814, -17.4894)
 
 [node name="Topping2" parent="Toppings" instance=ExtResource("4_fpl4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.35163, 0.589855, -10.4894)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13072, 0.272919, -8.62735)
 
 [node name="Topping3" parent="Toppings" instance=ExtResource("4_fpl4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6484, 1.58986, -10.4894)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6484, 0.356975, -9.46626)
+
+[node name="Topping4" parent="Toppings" instance=ExtResource("4_fpl4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13981, 0.356975, 18.3771)
+
+[node name="Topping5" parent="Toppings" instance=ExtResource("4_fpl4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5792, 0.270601, 5.89617)
+
+[node name="Topping6" parent="Toppings" instance=ExtResource("4_fpl4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23288, 0.23328, 0.0230446)
+
+[node name="Topping7" parent="Toppings" instance=ExtResource("4_fpl4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8292, 0.23328, -20.0501)
 
 [node name="HillyHole" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HillyHole"]
@@ -811,3 +826,6 @@ skeleton = NodePath("")
 visible = false
 mesh = SubResource("ArrayMesh_flgu8")
 skeleton = NodePath("")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+visible = false

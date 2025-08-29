@@ -87,6 +87,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func fling(power : float, angle : float):
 	use_fling.emit(flings_used)
 	flings_used += 1
+	$FlingAudio.play()
 	
 	
 	#var innacuracy = (randf()-0.5) * PI/8

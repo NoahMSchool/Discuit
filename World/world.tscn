@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://sk2u0jyf62wm"]
+[gd_scene load_steps=16 format=3 uid="uid://sk2u0jyf62wm"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_uqe84"]
 [ext_resource type="PackedScene" uid="uid://wa1hjtbq3rdt" path="res://Discuit/discuit.tscn" id="1_vpudw"]
 [ext_resource type="PackedScene" uid="uid://ddjp64l1uocwt" path="res://UserInterface/hud.tscn" id="2_3tgl2"]
 [ext_resource type="Script" path="res://World/kill_floor.gd" id="2_m8shm"]
+[ext_resource type="AudioStream" uid="uid://c5tcph6milat" path="res://274054__junggle__water-splash-02.wav" id="5_5bty8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_linvy"]
 sky_top_color = Color(0.4305, 0.406, 0.7, 1)
@@ -68,6 +69,9 @@ script = ExtResource("2_m8shm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorKill"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 shape = SubResource("BoxShape3D_dtg12")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FloorKill"]
+stream = ExtResource("5_5bty8")
 
 [node name="HoleNode" type="Node3D" parent="."]
 

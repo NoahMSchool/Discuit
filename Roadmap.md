@@ -92,14 +92,27 @@ Rotating animated goal
 
 
 
-Make Score system with toppings
-Add fruit in quaters for toppings and animate topping shrinking onto discuit
 
-Reimport holes lower poly collision shapes and with grass
-
-
-Model new discuit
 Basket
 Fruit/Toppings
 
+
+Improve Movement
+Movement Arrow
+Start Screen
+Sound Effects
+Die Screen
+Grass with multimesh
+Reimport Hole 2
+Add fruit in quaters for toppings and animate topping shrinking onto discuit
+Model new discuit
+Make Toppings Animate
 make wind that blows discuit to center when near edges
+
+
+
+Credit / Attribution
+
+water death - water-splash-02.wav by junggle -- https://freesound.org/s/274054/ -- License: Attribution NonCommercial 4.0
+
+fling sound - Tossing a thing at someone by pfranzen -- https://freesound.org/s/321505/ -- License: Attribution 4.0

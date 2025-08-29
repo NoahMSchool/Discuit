@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://wa1hjtbq3rdt"]
+[gd_scene load_steps=20 format=4 uid="uid://wa1hjtbq3rdt"]
 
 [ext_resource type="Script" path="res://Discuit/discuit.gd" id="1_ad7lm"]
 [ext_resource type="Texture2D" uid="uid://brpalkvk6xjy3" path="res://Discuit/discuit1.png" id="2_bx1b4"]
 [ext_resource type="Material" uid="uid://c5y27e4hkw1eb" path="res://Discuit/arrow_mat.tres" id="3_wmyan"]
+[ext_resource type="AudioStream" uid="uid://bcbvxkp6i6wa8" path="res://321505__pfranzen__tossing-a-thing-at-someone.ogg" id="4_04qay"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb3lu"]
 friction = 0.8
@@ -181,3 +182,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0, 0)
 mesh = SubResource("ArrayMesh_47m7e")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_wmyan")
+
+[node name="FlingAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_04qay")
