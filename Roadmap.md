@@ -88,3 +88,18 @@ Start, Death Screen
 
 Make More Holes
 Rotating animated goal
+
+
+
+
+Make Score system with toppings
+Add fruit in quaters for toppings and animate topping shrinking onto discuit
+
+Reimport holes lower poly collision shapes and with grass
+
+
+Model new discuit
+Basket
+Fruit/Toppings
+
+make wind that blows discuit to center when near edges

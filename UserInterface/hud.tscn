@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddjp64l1uocwt"]
+[gd_scene load_steps=12 format=3 uid="uid://ddjp64l1uocwt"]
 
 [ext_resource type="Script" path="res://UserInterface/hud.gd" id="1_cu26s"]
 [ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://UserInterface/Knewave-Regular.ttf" id="1_yiltx"]
@@ -36,6 +36,41 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpgpj"]
+bg_color = Color(0.4544, 0.68018, 0.71, 0.521569)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6, 0.5835, 0.402, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc734"]
+bg_color = Color(1, 1, 1, 0.392157)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.380432, 0.312485, 0.166073, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing = false
+
+[sub_resource type="ImageTexture" id="ImageTexture_q355s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ag4n"]
+font = ExtResource("1_yiltx")
+font_size = 25
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 5
+shadow_color = Color(0.599518, 0.584909, 0.405721, 0.705882)
+shadow_offset = Vector2(2, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_cu26s")
@@ -177,3 +212,174 @@ text = "Hole Number
 label_settings = ExtResource("2_lumol")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -295.0
+offset_top = 50.0
+offset_right = 295.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpgpj")
+
+[node name="ToppSlot1" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -50.0
+offset_right = 115.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc734")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToppSlot1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ToppSlot2" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 130.0
+offset_top = -50.0
+offset_right = 230.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc734")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToppSlot2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ToppSlot3" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 245.0
+offset_top = -50.0
+offset_right = 345.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc734")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToppSlot3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ToppSlot4" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 360.0
+offset_top = -50.0
+offset_right = 460.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc734")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToppSlot4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_q355s")
+
+[node name="ToppSlot5" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = -50.0
+offset_right = 575.0
+offset_bottom = 50.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc734")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToppSlot5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectivePanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("4_623k5")
+
+[node name="Label" type="Label" parent="ObjectivePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Objectives Complete Got to Exit"
+label_settings = SubResource("LabelSettings_6ag4n")

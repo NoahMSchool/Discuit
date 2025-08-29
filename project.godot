@@ -29,6 +29,7 @@ window/size/viewport_height=900
 folder_colors={
 "res://Discuit/": "purple",
 "res://Holes/": "teal",
+"res://Toppings/": "blue",
 "res://UserInterface/": "pink",
 "res://World/": "green"
 }

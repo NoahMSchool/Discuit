@@ -96,6 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 shape = SubResource("BoxShape3D_04jtx")
 
 [node name="FogBarriers" type="Node3D" parent="."]
+visible = false
 
 [node name="RightFog" type="FogVolume" parent="FogBarriers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
@@ -103,7 +104,7 @@ size = Vector3(2, 2, 60)
 material = SubResource("FogMaterial_y25oi")
 
 [node name="BackFog" type="FogVolume" parent="FogBarriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30)
 size = Vector3(40, 2, 2)
 material = SubResource("FogMaterial_y25oi")
 
@@ -117,5 +118,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 30)
 size = Vector3(40, 2, 2)
 material = SubResource("FogMaterial_y25oi")
 
+[connection signal="topping_collected" from="Discuit" to="." method="_on_discuit_topping_collected"]
 [connection signal="use_fling" from="Discuit" to="." method="_on_discuit_use_fling"]
 [connection signal="body_entered" from="FloorKill" to="FloorKill" method="_on_body_entered"]

@@ -1,7 +1,15 @@
-extends StaticBody3D
+extends AnimatableBody3D
 
-signal hole_complete
+signal hole_target_reached
+var period : float = 0
+
+func _physics_process(delta: float) -> void:
+	period += delta
+	#period = modf(period, TAU)
+	global_rotate(Vector3(0,1,0), delta*TAU*0.1)
+	#position.z = sin(period*TAU*0.5)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("levelCompleted")
-	hole_complete.emit()
+	if body.is_in_group("discuit"):
+		print("levelCompleted")
+		hole_target_reached.emit()

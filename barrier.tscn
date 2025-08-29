@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq7wy740cjdm5"]
+
+[ext_resource type="Script" path="res://barrier.gd" id="1_o0xin"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_y25oi"]
+density = 5.0
+albedo = Color(0.9025, 0.95, 0.941292, 1)
+emission = Color(0.414135, 0.648301, 0.585165, 1)
+
+[node name="Barrier" type="StaticBody3D"]
+
+[node name="RightFog" type="FogVolume" parent="."]
+visible = false
+material = SubResource("FogMaterial_y25oi")
+
+[node name="FrontBarrier" type="CollisionShape3D" parent="."]
+script = ExtResource("1_o0xin")
