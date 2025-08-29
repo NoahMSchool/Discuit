@@ -4,8 +4,6 @@ extends Area3D
 
 @onready var topping_meshes = [$MeshContainer/Blueberry, $MeshContainer/GumDrop, $MeshContainer/Chocolate, $MeshContainer/Almond, $MeshContainer/Acorn]
 
-
-
 @onready var topping_images: Array[Image] = [
 	(preload("res://Toppings/blueberryIcon.png") as Texture2D).get_image(),
 	(preload("res://Toppings/gumdrop_icon.png") as Texture2D).get_image(),

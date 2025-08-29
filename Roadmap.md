@@ -97,8 +97,7 @@ Basket
 Fruit/Toppings
 
 
-Improve Movement
-Movement Arrow
+
 Start Screen
 Sound Effects
 Die Screen
