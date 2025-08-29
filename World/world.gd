@@ -6,8 +6,18 @@ extends Node3D
 
 #probably dont need holenum
 #Move to game manager
-var holes : Array[Hole] = [Hole.new("Hilly Hole", 0, 3), Hole.new("River Run", 1, 4), Hole.new("Cliffy Canyon", 2, 3),]
-var hole_scenes : Array[PackedScene] = [preload("res://holes/hole_1.tscn"), preload("res://holes/hole_2.tscn"), preload("res://holes/hole_3.tscn"),]
+
+var holes : Array[Hole] = [
+	Hole.new("Hilly Hole", 0, 3), 
+	Hole.new("River Run", 1, 4), 
+	Hole.new("Cliffy Canyon", 2, 3),
+]
+
+var hole_scenes : Array[PackedScene] = [
+	preload("res://Holes/hole_1.tscn"), 
+	preload("res://Holes/hole_2.tscn"), 
+	preload("res://Holes/hole_3.tscn"),
+]
 
 @onready var current_hole_num : int = 0
 
