@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dytodeii2qo7a"
-path="res://.godot/imported/course2.glb-0a1515cd2e6fa82d99565767f4b010ec.scn"
+uid="uid://cuptqt3m744y"
+path="res://.godot/imported/hilly_hole_lp.glb-be8bfbc95687e16d02f3d04bf4b9cd7b.scn"
 
 [deps]
 
-source_file="res://Holes/Hole_resources/course2.glb"
-dest_files=["res://.godot/imported/course2.glb-0a1515cd2e6fa82d99565767f4b010ec.scn"]
+source_file="res://old_glbs/hilly_hole_lp.glb"
+dest_files=["res://.godot/imported/hilly_hole_lp.glb-be8bfbc95687e16d02f3d04bf4b9cd7b.scn"]
 
 [params]
 

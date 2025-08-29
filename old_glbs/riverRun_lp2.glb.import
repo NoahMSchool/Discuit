@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2v580xig5khf"
-path="res://.godot/imported/course3.glb-00b328e98069c4d13a21369973796398.scn"
+uid="uid://5qbh5b10lp1y"
+path="res://.godot/imported/riverRun_lp2.glb-7c9a5e4da37c6eddce927f5226416686.scn"
 
 [deps]
 
-source_file="res://Holes/Hole_resources/course3.glb"
-dest_files=["res://.godot/imported/course3.glb-00b328e98069c4d13a21369973796398.scn"]
+source_file="res://old_glbs/riverRun_lp2.glb"
+dest_files=["res://.godot/imported/riverRun_lp2.glb-7c9a5e4da37c6eddce927f5226416686.scn"]
 
 [params]
 

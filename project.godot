@@ -13,7 +13,7 @@ config_version=5
 config/name="RiskItForTheDiscuit"
 run/main_scene="res://World/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://old_glbs/icon.svg"
 
 [autoload]
 
@@ -27,6 +27,7 @@ window/size/viewport_height=900
 [file_customization]
 
 folder_colors={
+"res://Audio/": "pink",
 "res://Discuit/": "purple",
 "res://Holes/": "teal",
 "res://Toppings/": "blue",

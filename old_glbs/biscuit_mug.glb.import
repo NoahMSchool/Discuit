@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dg75ml66ravb3"
-path="res://.godot/imported/TreesRocksNature.glb-82ac3e723d9977f844b3011d6187a759.scn"
+uid="uid://hjdpisputwfq"
+path="res://.godot/imported/biscuit_mug.glb-12b1b94034fd5747de8ecc3ec2840002.scn"
 
 [deps]
 
-source_file="res://Holes/Hole_resources/TreesRocksNature.glb"
-dest_files=["res://.godot/imported/TreesRocksNature.glb-82ac3e723d9977f844b3011d6187a759.scn"]
+source_file="res://old_glbs/biscuit_mug.glb"
+dest_files=["res://.godot/imported/biscuit_mug.glb-12b1b94034fd5747de8ecc3ec2840002.scn"]
 
 [params]
 

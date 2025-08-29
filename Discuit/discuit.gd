@@ -26,7 +26,19 @@ var flings_used = 0
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func get_launch_vector(angle):
+	var innacuracy = (randf()-0.5) * PI
+	
+	var launch_dir = -cam_target.global_basis.z
+	launch_dir.y = 0
+	launch_dir = launch_dir.normalized()	
+	launch_dir *= cos(fling_angle)
+	launch_dir.y =sin(fling_angle)
+	
+	launch_dir.rotated(Vector3(0,1,0), innacuracy)
+	return launch_dir.normalized()
+	
+
 func _physics_process(delta: float) -> void:
 	cam_target.global_position.x = lerpf(cam_target.global_position.x, global_position.x, delta*cam_follow_speed)
 	cam_target.global_position.y = lerpf(cam_target.global_position.y, global_position.y, delta*cam_follow_speed)
@@ -38,29 +50,20 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if linear_velocity.abs().y<0.5:
-		targeting_arrow.visible = true
-		targeting_arrow.global_position = global_position	
-		targeting_arrow.global_basis.z = -cam_target.global_basis.z
-		targeting_arrow.global_basis.z.y = 0
-		targeting_arrow.global_rotation.z = 0
-			
+		var launch_dir = get_launch_vector(fling_angle)
+		
+		
 		if Input.is_action_pressed("launch"):
 			fling_power = move_toward(fling_power, max_fling_power, delta*max_fling_power)
 			fling_angle = move_toward(fling_angle, max_fling_angle, delta*max_fling_angle)
-
-			var right_axis = Vector3.UP.cross(targeting_arrow.global_basis.z)
-			#targeting_arrow.global_basis.z - targeting_arrow.global_basis.z.rotated(right_axis, fling_angle)
-			#
-			#var xz_forward = -cam_target.global_basis.z.normalized()
-			#xz_forward.y = 0
-			#
-			#var right_axis = Vector3.UP.cross(xz_forward).normalized()
-			targeting_arrow.global_basis.z = targeting_arrow.global_basis.z.rotated(right_axis, fling_angle).normalized()
-			#
-
+			targeting_arrow.global_position = global_position
+			targeting_arrow.visible = true
+			targeting_arrow.look_at(global_position+launch_dir, Vector3.UP)
 			
 		elif Input.is_action_just_released("launch"):
-			fling(fling_power, fling_angle)
+			#fling(fling_power, fling_angle)
+			fling(launch_dir*fling_power)
+			
 		else:
 			fling_power = 0
 			fling_angle = 0
@@ -83,36 +86,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		cam_target.rotation.x -= event.relative.y*cam_sens
 		cam_target.rotation.x = clamp(cam_target.rotation.x, -PI/4, PI/8)
 
-
-func fling(power : float, angle : float):
+func fling(vec : Vector3):
 	use_fling.emit(flings_used)
 	flings_used += 1
 	$FlingAudio.play()
-	
-	
-	#var innacuracy = (randf()-0.5) * PI/8
-	#launch_dir.rotated(Vector3(0,1,0), innacuracy)
-	
-	#var launch_forward = power*cos(angle)
-	#var launch_up = power*sin(angle)
-	#launch_dir.y = 0
-	#launch_dir.y = 1
-	#launch_dir.rotated(Vector3(1,0,0), angle)
-	
-	#var launch_dir = -cam_target.global_basis.z
-	#launch_dir.y = 0
-	#launch_dir = launch_dir.normalized()
-	#
-	#var right_axis = Vector3.UP.cross(launch_dir)
-	#launch_dir = launch_dir.rotated(right_axis, -angle)
-	#
-	var launch_dir = -cam_target.global_basis.z
-	launch_dir.y = 0
-	launch_dir = launch_dir.normalized()	
-	launch_dir *= cos(angle)
-	launch_dir.y =sin(angle)
-	launch_dir = launch_dir.normalized()
-	apply_central_impulse(launch_dir*power)
+	apply_central_impulse(vec)
 
 func add_topping(topping_image : Image):
 	topping_count += 1

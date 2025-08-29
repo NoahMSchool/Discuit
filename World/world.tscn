@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wa1hjtbq3rdt" path="res://Discuit/discuit.tscn" id="1_vpudw"]
 [ext_resource type="PackedScene" uid="uid://ddjp64l1uocwt" path="res://UserInterface/hud.tscn" id="2_3tgl2"]
 [ext_resource type="Script" path="res://World/kill_floor.gd" id="2_m8shm"]
-[ext_resource type="AudioStream" uid="uid://c5tcph6milat" path="res://274054__junggle__water-splash-02.wav" id="5_5bty8"]
+[ext_resource type="AudioStream" uid="uid://c5tcph6milat" path="res://Audio/274054__junggle__water-splash-02.wav" id="5_5bty8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_linvy"]
 sky_top_color = Color(0.4305, 0.406, 0.7, 1)
@@ -63,7 +63,7 @@ environment = SubResource("Environment_pprw8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="FloorKill" type="Area3D" parent="." groups=["discuit"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -112.463, 0)
 script = ExtResource("2_m8shm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorKill"]

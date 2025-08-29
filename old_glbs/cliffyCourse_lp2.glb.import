@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d2d6a03fk6vjc"
-path="res://.godot/imported/cliffyCourse_lp2.glb-c53bca03a3a7b64bdccf97dfa8769132.scn"
+path="res://.godot/imported/cliffyCourse_lp2.glb-286c830efeb724f33dee9e794f0f54ab.scn"
 
 [deps]
 
-source_file="res://Holes/Hole_resources/cliffyCourse_lp2.glb"
-dest_files=["res://.godot/imported/cliffyCourse_lp2.glb-c53bca03a3a7b64bdccf97dfa8769132.scn"]
+source_file="res://old_glbs/cliffyCourse_lp2.glb"
+dest_files=["res://.godot/imported/cliffyCourse_lp2.glb-286c830efeb724f33dee9e794f0f54ab.scn"]
 
 [params]
 

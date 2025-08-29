@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5qbh5b10lp1y"
-path="res://.godot/imported/riverRun_lp2.glb-8bf1685f3073293fa9345572c3bb7a13.scn"
+uid="uid://bphs4gxopj6b6"
+path="res://.godot/imported/discuit3.glb-64e10c054a3e7a58617d948fb430d638.scn"
 
 [deps]
 
-source_file="res://Holes/Hole_resources/riverRun_lp2.glb"
-dest_files=["res://.godot/imported/riverRun_lp2.glb-8bf1685f3073293fa9345572c3bb7a13.scn"]
+source_file="res://Discuit/discuit3.glb"
+dest_files=["res://.godot/imported/discuit3.glb-64e10c054a3e7a58617d948fb430d638.scn"]
 
 [params]
 

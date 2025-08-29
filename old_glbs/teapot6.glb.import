@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cuptqt3m744y"
-path="res://.godot/imported/hilly_hole_lp.glb-2b710f8f9e51ba46f5c472bf89d081c3.scn"
+uid="uid://bvpxn03jjwi1y"
+path="res://.godot/imported/teapot6.glb-9616ffc387bbec98c85f4c5fd91de7a8.scn"
 
 [deps]
 
-source_file="res://Holes/Hole_resources/hilly_hole_lp.glb"
-dest_files=["res://.godot/imported/hilly_hole_lp.glb-2b710f8f9e51ba46f5c472bf89d081c3.scn"]
+source_file="res://old_glbs/teapot6.glb"
+dest_files=["res://.godot/imported/teapot6.glb-9616ffc387bbec98c85f4c5fd91de7a8.scn"]
 
 [params]
 
