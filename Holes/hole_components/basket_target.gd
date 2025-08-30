@@ -8,8 +8,7 @@ func _physics_process(delta: float) -> void:
 	#period = modf(period, TAU)
 	global_rotate(Vector3(0,1,0), delta*TAU*0.1)
 	#position.z = sin(period*TAU*0.5)
-
+	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("discuit"):
-		print("levelCompleted")
 		hole_target_reached.emit()

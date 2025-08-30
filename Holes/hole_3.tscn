@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ckxdnyr4lwtuk"]
+[gd_scene load_steps=38 format=4 uid="uid://ckxdnyr4lwtuk"]
 
 [ext_resource type="PackedScene" uid="uid://8afpth0w3f7a" path="res://Holes/hole_components/floor_kill.tscn" id="1_2sk0b"]
 [ext_resource type="Material" uid="uid://c8grmgk6k60bu" path="res://Holes/water_material.tres" id="1_4ya86"]
@@ -420,10 +420,25 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tkyac")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sitcp"]
+size = Vector3(40, 50, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a1xct"]
+size = Vector3(40, 50, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60lvh"]
+size = Vector3(1, 50, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5uob"]
+size = Vector3(1, 50, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ybv6t"]
+size = Vector3(40, 1, 60)
+
 [node name="Hole_3" type="Node3D"]
 
 [node name="FloorKill" parent="." instance=ExtResource("1_2sk0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1247, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1247, 0)
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(45, 0, 0, 0, 1, 0, 0, 0, 65, 0, 0, 0)
@@ -431,7 +446,7 @@ mesh = SubResource("BoxMesh_6251e")
 surface_material_override/0 = ExtResource("1_4ya86")
 
 [node name="HoleStart" parent="." instance=ExtResource("2_ldjct")]
-transform = Transform3D(-0.173648, 0, -0.984807, 0, 1, 0, 0.984807, 0, -0.173648, 10, 6.36991, 22)
+transform = Transform3D(-0.906307, 0, 0.422618, 0, 1, 0, -0.422618, 0, -0.906307, 10, 6.36991, 22)
 
 [node name="Nature" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.13856, 0)
@@ -507,7 +522,7 @@ mesh = SubResource("ArrayMesh_gsbc4")
 skeleton = NodePath("")
 
 [node name="Rock4" type="StaticBody3D" parent="Nature"]
-transform = Transform3D(-0.931329, 0.364178, 0, -0.35907, -0.918265, -0.166906, -0.0607837, -0.155445, 0.985973, -51.7734, 4.4809, -16.7634)
+transform = Transform3D(-0.0881913, -0.14465, 0.985545, -0.242621, -0.956483, -0.162095, 0.966104, -0.253409, 0.0492585, -51.7734, 4.57685, -16.7634)
 collision_layer = 4
 collision_mask = 0
 
@@ -515,7 +530,6 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_fdx5h")
 
 [node name="Rock1" type="MeshInstance3D" parent="Nature/Rock4"]
-transform = Transform3D(0.661241, 0.681674, 0.313178, -0.748423, 0.627962, 0.213371, -0.0512141, -0.375479, 0.925415, 0, 0, 0)
 mesh = SubResource("ArrayMesh_gsbc4")
 skeleton = NodePath("")
 
@@ -578,6 +592,18 @@ shape = SubResource("ConcavePolygonShape3D_6xmya")
 mesh = SubResource("ArrayMesh_ius5y")
 skeleton = NodePath("")
 
+[node name="Rock11" type="StaticBody3D" parent="Nature"]
+transform = Transform3D(0.632644, 0.467062, 0.61775, -0.20673, 0.870575, -0.4465, -0.746341, 0.154768, 0.647319, -39.0157, 1.82605, 7.39798)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nature/Rock11"]
+shape = SubResource("ConcavePolygonShape3D_6xmya")
+
+[node name="Rock4" type="MeshInstance3D" parent="Nature/Rock11"]
+mesh = SubResource("ArrayMesh_ius5y")
+skeleton = NodePath("")
+
 [node name="Rock10" type="StaticBody3D" parent="Nature"]
 transform = Transform3D(0.632644, 0.467062, 0.61775, -0.594045, -0.219097, 0.77402, 0.496862, -0.85665, 0.138846, -35.7742, 4.24524, -16.2098)
 collision_layer = 4
@@ -627,3 +653,27 @@ shape = SubResource("ConcavePolygonShape3D_cy0n0")
 [node name="CliffyCourse3" type="MeshInstance3D" parent="CliffyCourse_001"]
 mesh = SubResource("ArrayMesh_ts8hx")
 skeleton = NodePath("")
+
+[node name="Barriers" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="FrontBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 30.5)
+shape = SubResource("BoxShape3D_sitcp")
+
+[node name="BackBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -30.5)
+shape = SubResource("BoxShape3D_a1xct")
+
+[node name="LeftBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 25, 0)
+shape = SubResource("BoxShape3D_60lvh")
+
+[node name="RightBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 25, 0)
+shape = SubResource("BoxShape3D_c5uob")
+
+[node name="TopBarrier" type="CollisionShape3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+shape = SubResource("BoxShape3D_ybv6t")

@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctiopolteembd"]
+[gd_scene load_steps=15 format=3 uid="uid://ctiopolteembd"]
 
 [ext_resource type="Script" path="res://UserInterface/title_screen.gd" id="1_08xjp"]
 [ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://UserInterface/Knewave-Regular.ttf" id="1_hjchp"]
 [ext_resource type="StyleBox" uid="uid://bd5vrpow0bcj2" path="res://UserInterface/StyleBoxes/ButtonPressed.tres" id="2_lr7w4"]
+[ext_resource type="Texture2D" uid="uid://dondxkdmuub2v" path="res://old_glbs/Untitled_Artwork.png" id="2_ol5o6"]
+[ext_resource type="StyleBox" uid="uid://chxmsfr4m408x" path="res://UserInterface/StyleBoxes/ButtonHover.tres" id="3_2oi5q"]
 [ext_resource type="StyleBox" uid="uid://dxuacj7wm80co" path="res://UserInterface/StyleBoxes/ButtonNormal.tres" id="3_3hbnk"]
+[ext_resource type="LabelSettings" uid="uid://cbda8l5413cgc" path="res://UserInterface/blueberry_text.tres" id="7_6f2xq"]
+[ext_resource type="StyleBox" uid="uid://cqglookn4ibpq" path="res://UserInterface/biscuitStyleBox.tres" id="8_w7b6n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vwmn6"]
 font = ExtResource("1_hjchp")
@@ -38,6 +42,34 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="LabelSettings" id="LabelSettings_vvcq3"]
+font = ExtResource("1_hjchp")
+font_size = 52
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 5
+shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nf51"]
+bg_color = Color(0.5256, 0.6, 0.414, 0.235294)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.29, 0.242633, 0.087, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_prrp1"]
+font = ExtResource("1_hjchp")
+font_size = 48
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 5
+shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
+shadow_offset = Vector2(2, 1)
+
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -51,17 +83,27 @@ script = ExtResource("1_08xjp")
 layout_mode = 0
 offset_right = 1600.0
 offset_bottom = 900.0
-color = Color(0.53049, 0.398579, 0.244085, 1)
+color = Color(0.53, 0.39644, 0.2438, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 1750.0
+offset_bottom = 1000.0
+texture = ExtResource("2_ol5o6")
+expand_mode = 1
 
 [node name="ForTheDiscuit" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -244.0
-offset_top = 50.0
-offset_right = 244.0
-offset_bottom = 163.0
+offset_left = -300.0
+offset_top = 125.0
+offset_right = 188.0
+offset_bottom = 238.0
 grow_horizontal = 2
 text = "For The Discuit
 "
@@ -91,42 +133,161 @@ offset_right = 120.5
 offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Discuit
+text = "Disc-It
 "
 label_settings = SubResource("LabelSettings_vwmn6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Course Selector" type="Panel" parent="."]
+[node name="StartCourseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -125.0
+offset_right = -150.0
+offset_bottom = 125.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_hjchp")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("3_2oi5q")
+theme_override_styles/hover = ExtResource("3_2oi5q")
+theme_override_styles/pressed = ExtResource("2_lr7w4")
+theme_override_styles/normal = ExtResource("3_3hbnk")
+text = "Start Course"
+
+[node name="Best Score" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -450.0
-offset_top = -650.0
-offset_right = -50.0
-offset_bottom = -50.0
+offset_left = -2231.0
+offset_top = -710.0
+offset_right = -1931.0
+offset_bottom = -210.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ytg8p")
 
-[node name="ButtonHole1" type="Button" parent="Course Selector"]
+[node name="Label" type="Label" parent="Best Score"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.5
+offset_right = 122.5
+offset_bottom = 82.0
+grow_horizontal = 2
+text = "Best Score
+"
+label_settings = SubResource("LabelSettings_vvcq3")
+horizontal_alignment = 1
+
+[node name="Best Score2" type="Panel" parent="Best Score"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
+offset_left = -298.0
+offset_top = -280.0
+offset_right = -116.0
+offset_bottom = -136.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_hjchp")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/pressed = ExtResource("2_lr7w4")
-theme_override_styles/normal = ExtResource("3_3hbnk")
-text = "1"
+theme_override_styles/panel = SubResource("StyleBoxFlat_ytg8p")
 
-[connection signal="pressed" from="Course Selector/ButtonHole1" to="." method="_on_button_hole_1_pressed"]
+[node name="Label" type="Label" parent="Best Score/Best Score2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "5
+"
+label_settings = SubResource("LabelSettings_vvcq3")
+
+[node name="Controls" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -350.0
+offset_right = 350.0
+offset_bottom = -50.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nf51")
+
+[node name="Label" type="Label" parent="Controls"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 25.0
+offset_right = 128.0
+offset_bottom = 107.0
+grow_horizontal = 2
+text = "Controls"
+label_settings = SubResource("LabelSettings_prrp1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Controls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -50.0
+offset_right = 128.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Space Or Mouse to fling, Hold For more power
+Camera Sensitivity ->"
+label_settings = ExtResource("7_6f2xq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Volume" type="Panel" parent="Controls"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -150.0
+offset_right = 130.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("8_w7b6n")
+
+[node name="VSlider" type="VSlider" parent="Controls/Volume"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -121.5
+offset_right = 31.0
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+
+[connection signal="pressed" from="StartCourseButton" to="." method="_on_button_hole_1_pressed"]

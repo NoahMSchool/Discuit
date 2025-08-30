@@ -105,14 +105,22 @@ Grass with multimesh
 Add fruit in quaters for toppings and animate topping shrinking onto discuit
 Make Toppings Animate
 make wind that blows discuit to center when near edges
+
+Final Stretch 
+
+Sound Effects
+Menu and end screen
+New basket model
 Cam Sens slider
 
+Maybe 
+Animate toppings onto discuit
+Add toppings on top of discuit
+Wind
+New Fling Mechanism
 
-Die - Go back to last fling and gain a fling
 
-Start
-- How to play
-- Level Select
+
 
 
 Credit / Attribution
@@ -120,3 +128,11 @@ Credit / Attribution
 water death - water-splash-02.wav by junggle -- https://freesound.org/s/274054/ -- License: Attribution NonCommercial 4.0
 
 fling sound - Tossing a thing at someone by pfranzen -- https://freesound.org/s/321505/ -- License: Attribution 4.0
+
+landing - landing by hordik -- https://freesound.org/s/476114/ -- License: Attribution 4.0
+
+UI sounds - Kenney UI Audio
+
+collect sound - Collect Crystal by axilirate -- https://freesound.org/s/592346/ -- License: Creative Commons 0
+
+Diamond Collect by Arcana23 -- https://freesound.org/s/685660/ -- License: Attribution NonCommercial 4.0

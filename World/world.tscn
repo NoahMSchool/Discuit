@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://sk2u0jyf62wm"]
+[gd_scene load_steps=8 format=3 uid="uid://sk2u0jyf62wm"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_uqe84"]
 [ext_resource type="PackedScene" uid="uid://wa1hjtbq3rdt" path="res://Discuit/discuit.tscn" id="1_vpudw"]
@@ -22,21 +22,6 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.005
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6t4vt"]
-size = Vector3(40, 50, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_17dp0"]
-size = Vector3(40, 50, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qgxea"]
-size = Vector3(1, 50, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v1uq1"]
-size = Vector3(1, 50, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_04jtx"]
-size = Vector3(40, 1, 60)
-
 [sub_resource type="FogMaterial" id="FogMaterial_y25oi"]
 density = 5.0
 albedo = Color(0.9025, 0.95, 0.941292, 1)
@@ -58,30 +43,6 @@ environment = SubResource("Environment_pprw8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="HoleNode" type="Node3D" parent="."]
-
-[node name="Barriers" type="StaticBody3D" parent="."]
-collision_layer = 4
-collision_mask = 0
-
-[node name="FrontBarrier" type="CollisionShape3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 30)
-shape = SubResource("BoxShape3D_6t4vt")
-
-[node name="BackBarrier" type="CollisionShape3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -30)
-shape = SubResource("BoxShape3D_17dp0")
-
-[node name="LeftBarrier" type="CollisionShape3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 25, 0)
-shape = SubResource("BoxShape3D_qgxea")
-
-[node name="RightBarrier" type="CollisionShape3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 25, 0)
-shape = SubResource("BoxShape3D_v1uq1")
-
-[node name="TopBarrier" type="CollisionShape3D" parent="Barriers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
-shape = SubResource("BoxShape3D_04jtx")
 
 [node name="FogBarriers" type="Node3D" parent="."]
 visible = false
@@ -106,6 +67,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 30)
 size = Vector3(40, 2, 2)
 material = SubResource("FogMaterial_y25oi")
 
-[connection signal="discuit_dead" from="Discuit" to="." method="discuit_dead"]
 [connection signal="topping_collected" from="Discuit" to="." method="_on_discuit_topping_collected"]
 [connection signal="use_fling" from="Discuit" to="." method="_on_discuit_use_fling"]

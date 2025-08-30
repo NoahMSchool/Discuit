@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bchb8aqinxdpj"]
+[gd_scene load_steps=10 format=4 uid="uid://bchb8aqinxdpj"]
 
 [ext_resource type="Script" path="res://hole_start.gd" id="1_1xf3r"]
 [ext_resource type="Material" uid="uid://bqh86peeywr14" path="res://Holes/hole_components/teapot_mat.tres" id="2_pt1mt"]
@@ -39,8 +39,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8yqg4")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt1f7"]
-albedo_color = Color(0.546988, 0.718054, 0.51263, 1)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l50im"]
+height = 1.5
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_njvo8"]
+height = 0.25
+radius = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jowj"]
+size = Vector3(0.5, 0.25, 0.5)
 
 [node name="hole_start" type="StaticBody3D"]
 collision_layer = 4
@@ -53,17 +61,22 @@ shape = SubResource("ConcavePolygonShape3D_wisp8")
 disabled = true
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, 0)
 
 [node name="Teapot" type="MeshInstance3D" parent="."]
-visible = false
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_4n16u")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_pt1mt")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-material_override = SubResource("StandardMaterial3D_tt1f7")
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(2, 0.5, 1.5)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_l50im")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47, 0)
+shape = SubResource("CylinderShape3D_njvo8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.1, 0)
+shape = SubResource("BoxShape3D_8jowj")
