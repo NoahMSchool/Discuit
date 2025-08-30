@@ -3,6 +3,7 @@ extends Area3D
 #@export var topping_num = 0
 
 @onready var topping_meshes = [$MeshContainer/Blueberry, $MeshContainer/GumDrop, $MeshContainer/Chocolate, $MeshContainer/Almond, $MeshContainer/Acorn]
+@onready var rest_pos = global_position
 
 @onready var topping_images: Array[Image] = [
 	(preload("res://Toppings/blueberryIcon.png") as Texture2D).get_image(),
@@ -27,3 +28,9 @@ func _on_body_entered(body: Node3D) -> void:
 		monitoring = false
 		visible = false
 		queue_free()
+
+var period = 0
+func _physics_process(delta: float) -> void:
+	period += delta
+	global_position.y = rest_pos.y + sin(period)/4
+	rotate_y(delta*TAU/4)

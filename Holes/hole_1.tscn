@@ -1,9 +1,10 @@
-[gd_scene load_steps=45 format=4 uid="uid://sv35mbu3fmsi"]
+[gd_scene load_steps=46 format=4 uid="uid://sv35mbu3fmsi"]
 
 [ext_resource type="PackedScene" uid="uid://bchb8aqinxdpj" path="res://Holes/hole_components/hole_start.tscn" id="1_7b300"]
 [ext_resource type="PackedScene" uid="uid://d0k06jp5br6eo" path="res://Holes/hole_components/basket_target.tscn" id="2_3kyy0"]
 [ext_resource type="Material" uid="uid://c8grmgk6k60bu" path="res://Holes/water_material.tres" id="3_7rsuc"]
 [ext_resource type="PackedScene" uid="uid://bs3kwcrvdqnm8" path="res://Toppings/topping.tscn" id="4_fpl4e"]
+[ext_resource type="PackedScene" uid="uid://8afpth0w3f7a" path="res://Holes/hole_components/floor_kill.tscn" id="5_6jfif"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r58as"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -829,3 +830,8 @@ skeleton = NodePath("")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 visible = false
+
+[node name="FloorKill" parent="." instance=ExtResource("5_6jfif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, -9)
+width = 10
+length = 10

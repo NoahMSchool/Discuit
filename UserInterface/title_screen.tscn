@@ -1,6 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctiopolteembd"]
+[gd_scene load_steps=8 format=3 uid="uid://ctiopolteembd"]
 
+[ext_resource type="Script" path="res://UserInterface/title_screen.gd" id="1_08xjp"]
 [ext_resource type="FontFile" uid="uid://cr3k0sjtqygjt" path="res://UserInterface/Knewave-Regular.ttf" id="1_hjchp"]
+[ext_resource type="StyleBox" uid="uid://bd5vrpow0bcj2" path="res://UserInterface/StyleBoxes/ButtonPressed.tres" id="2_lr7w4"]
+[ext_resource type="StyleBox" uid="uid://dxuacj7wm80co" path="res://UserInterface/StyleBoxes/ButtonNormal.tres" id="3_3hbnk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwmn6"]
+font = ExtResource("1_hjchp")
+font_size = 72
+font_color = Color(0.815744, 0.922393, 0.925778, 1)
+shadow_size = 5
+shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
+shadow_offset = Vector2(2, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si1sr"]
 bg_color = Color(0.4374, 0.54, 0.3348, 1)
@@ -15,13 +26,17 @@ corner_radius_bottom_right = 300
 corner_radius_bottom_left = 150
 shadow_size = 1
 
-[sub_resource type="LabelSettings" id="LabelSettings_vwmn6"]
-font = ExtResource("1_hjchp")
-font_size = 72
-font_color = Color(0.815744, 0.922393, 0.925778, 1)
-shadow_size = 5
-shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
-shadow_offset = Vector2(2, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytg8p"]
+bg_color = Color(0.5256, 0.6, 0.414, 0.235294)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.29, 0.242633, 0.087, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -30,23 +45,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_08xjp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1200.0
-offset_bottom = 700.0
+offset_right = 1600.0
+offset_bottom = 900.0
 color = Color(0.53049, 0.398579, 0.244085, 1)
 
-[node name="Panel" type="Panel" parent="ColorRect"]
+[node name="ForTheDiscuit" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -244.0
+offset_top = 50.0
+offset_right = 244.0
+offset_bottom = 163.0
+grow_horizontal = 2
+text = "For The Discuit
+"
+label_settings = SubResource("LabelSettings_vwmn6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Disc" type="Panel" parent="ColorRect"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 450.0
-offset_bottom = 500.0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = 450.0
 rotation = -0.261799
 theme_override_styles/panel = SubResource("StyleBoxFlat_si1sr")
 
-[node name="Label" type="Label" parent="ColorRect/Panel"]
+[node name="Label" type="Label" parent="ColorRect/Disc"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,3 +96,37 @@ text = "Discuit
 label_settings = SubResource("LabelSettings_vwmn6")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Course Selector" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -650.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ytg8p")
+
+[node name="ButtonHole1" type="Button" parent="Course Selector"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_hjchp")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/pressed = ExtResource("2_lr7w4")
+theme_override_styles/normal = ExtResource("3_3hbnk")
+text = "1"
+
+[connection signal="pressed" from="Course Selector/ButtonHole1" to="." method="_on_button_hole_1_pressed"]

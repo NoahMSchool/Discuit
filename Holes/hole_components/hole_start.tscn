@@ -40,7 +40,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8yqg4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt1f7"]
-albedo_color = Color(0.517675, 0.71777, 0.477113, 1)
+albedo_color = Color(0.546988, 0.718054, 0.51263, 1)
 
 [node name="hole_start" type="StaticBody3D"]
 collision_layer = 4

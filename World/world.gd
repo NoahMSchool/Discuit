@@ -19,7 +19,7 @@ var hole_scenes : Array[PackedScene] = [
 	preload("res://Holes/hole_3.tscn"),
 ]
 
-@onready var current_hole_num : int = 2
+@onready var current_hole_num : int = 0
 
 
 func start_hole(hole_num):

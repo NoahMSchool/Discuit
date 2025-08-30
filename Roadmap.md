@@ -103,11 +103,16 @@ Sound Effects
 Die Screen
 Grass with multimesh
 Add fruit in quaters for toppings and animate topping shrinking onto discuit
-Model new discuit
 Make Toppings Animate
 make wind that blows discuit to center when near edges
-Cam Sens 
+Cam Sens slider
 
+
+Die - Go back to last fling and gain a fling
+
+Start
+- How to play
+- Level Select
 
 
 Credit / Attribution

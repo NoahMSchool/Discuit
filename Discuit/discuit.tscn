@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://wa1hjtbq3rdt"]
+[gd_scene load_steps=18 format=4 uid="uid://wa1hjtbq3rdt"]
 
 [ext_resource type="Script" path="res://Discuit/discuit.gd" id="1_ad7lm"]
 [ext_resource type="Material" uid="uid://c5y27e4hkw1eb" path="res://Discuit/arrow_mat.tres" id="3_wmyan"]
@@ -9,17 +9,6 @@
 friction = 0.3
 rough = true
 bounce = 0.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_dxx61"]
-size = Vector3(0.05, 0.05, 0.1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mm66x"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.05
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gifh2"]
-albedo_color = Color(0.66, 0.48048, 0.3432, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na4n6"]
 
@@ -144,17 +133,6 @@ mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_tb3lu")
 continuous_cd = true
 script = ExtResource("1_ad7lm")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999999, 0, 0.00102974, 0, 1, 0, -0.00102974, 0, 1, 0, 0.025, -0.1)
-visible = false
-mesh = SubResource("BoxMesh_dxx61")
-skeleton = NodePath("../MeshInstance3D")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CylinderMesh_mm66x")
-surface_material_override/0 = SubResource("StandardMaterial3D_gifh2")
 
 [node name="CamTarget" type="Node3D" parent="."]
 top_level = true

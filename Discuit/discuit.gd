@@ -2,6 +2,7 @@ extends RigidBody3D
 
 signal use_fling
 signal topping_collected
+signal discuit_dead
 
 @onready var cam_target: Node3D = $CamTarget
 @onready var cam: Camera3D = $CamTarget/SpringArm3D/Camera3D
@@ -41,7 +42,7 @@ func get_launch_vector(angle):
 
 func _physics_process(delta: float) -> void:
 	cam_target.global_position.x = lerpf(cam_target.global_position.x, global_position.x, delta*cam_follow_speed)
-	cam_target.global_position.y = lerpf(cam_target.global_position.y, global_position.y, delta*cam_follow_speed)
+	cam_target.global_position.y = lerpf(cam_target.global_position.y, global_position.y+0.5, delta*cam_follow_speed)
 	cam_target.global_position.z = lerpf(cam_target.global_position.z, global_position.z, delta*cam_follow_speed)
 	
 	if Input.is_action_just_pressed("quit"):
@@ -105,5 +106,5 @@ func reset(position : Vector3):
 	global_position = position
 	
 	
-func die():
-	print("you died")
+func discuit_die():
+	discuit_dead.emit()
