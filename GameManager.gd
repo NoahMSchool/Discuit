@@ -2,6 +2,8 @@ extends Node
 
 @onready var current_hole_num : int = 0
 
+var mouse_sens : float = 0.50
+
 enum screen { 
 	START,
 	PLAYING,
@@ -64,3 +66,6 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("MagicCheat") and current_screen == screen.PLAYING:
 		hole_completed(100 + current_hole_num)
+	
+	if Input.is_action_just_pressed("startscreen"):
+		current_screen = screen.START

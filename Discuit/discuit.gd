@@ -10,7 +10,7 @@ signal topping_collected
 
 var last_fling_pos : Vector3
 
-var cam_sens = 0.00025
+@onready var cam_sens = 0.00005 * GameManager.mouse_sens
 
 @export var torque_power = 1.5
 @export var max_fling_power = 3

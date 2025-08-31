@@ -18,7 +18,7 @@ shadow_color = Color(0.24472, 0.171147, 0.317642, 0.705882)
 shadow_offset = Vector2(2, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si1sr"]
-bg_color = Color(0.4374, 0.54, 0.3348, 1)
+bg_color = Color(0.804522, 0.683069, 0.481023, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -219,11 +219,26 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
-offset_top = -350.0
-offset_right = 350.0
+offset_top = -400.0
+offset_right = 400.0
 offset_bottom = -50.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0nf51")
+
+[node name="Label2" type="Label" parent="Controls"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 325.0
+offset_top = 275.0
+offset_right = 642.0
+offset_bottom = 357.0
+grow_horizontal = 2
+text = "<-- Cam Sens"
+label_settings = SubResource("LabelSettings_prrp1")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Controls"]
 layout_mode = 1
@@ -231,9 +246,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.0
-offset_top = 25.0
+offset_top = 15.0
 offset_right = 128.0
-offset_bottom = 107.0
+offset_bottom = 97.0
 grow_horizontal = 2
 text = "Controls"
 label_settings = SubResource("LabelSettings_prrp1")
@@ -254,7 +269,7 @@ offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Space Or Mouse to fling, Hold For more power
-Camera Sensitivity ->"
+"
 label_settings = ExtResource("7_6f2xq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -268,9 +283,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 50.0
-offset_top = -150.0
+offset_top = -175.0
 offset_right = 130.0
-offset_bottom = 150.0
+offset_bottom = 175.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("8_w7b6n")
@@ -285,9 +300,13 @@ anchor_bottom = 0.5
 offset_left = -31.0
 offset_top = -121.5
 offset_right = 31.0
-offset_bottom = 121.5
+offset_bottom = 138.5
 grow_horizontal = 2
 grow_vertical = 2
+min_value = 1.0
 max_value = 10.0
+step = 0.5
+value = 5.0
 
 [connection signal="pressed" from="StartCourseButton" to="." method="_on_button_hole_1_pressed"]
+[connection signal="value_changed" from="Controls/Volume/VSlider" to="." method="_on_v_slider_value_changed"]

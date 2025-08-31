@@ -28,8 +28,9 @@ func _on_body_entered(body: Node3D) -> void:
 		body.add_topping(topping_images[topping_num])
 		monitoring = false
 		target_pos = body.global_position
+		$AudioStreamPlayer3D.play()
 		#visible = false
-		queue_free()
+		#queue_free()
 
 var period = 0
 func _physics_process(delta: float) -> void:
@@ -37,5 +38,8 @@ func _physics_process(delta: float) -> void:
 	global_position.y = rest_pos.y + sin(period)/4
 	rotate_y(delta*TAU/4)
 	
-	#if target_pos:
-		#global_position = lerpf(gl)
+	if target_pos:
+		global_position = global_position.lerp(target_pos, delta*2)
+		scale = scale.lerp(Vector3.ZERO, delta*2)
+	if scale.length() < 0.1:
+		queue_free()

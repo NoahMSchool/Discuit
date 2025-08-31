@@ -111,10 +111,8 @@ Final Stretch
 Sound Effects
 Menu and end screen
 New basket model
-Cam Sens slider
 
 Maybe 
-Animate toppings onto discuit
 Add toppings on top of discuit
 Wind
 New Fling Mechanism
@@ -136,3 +134,7 @@ UI sounds - Kenney UI Audio
 collect sound - Collect Crystal by axilirate -- https://freesound.org/s/592346/ -- License: Creative Commons 0
 
 Diamond Collect by Arcana23 -- https://freesound.org/s/685660/ -- License: Attribution NonCommercial 4.0
+
+"Farm" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/

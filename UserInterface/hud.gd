@@ -24,12 +24,15 @@ func activate_topping_slots(num : int):
 		$Panel/ToppSlot1.visible = true
 
 func set_topping_slot(num : int, img : Image):
-	var tex_rec : TextureRect = toppings_slots[num-1].get_child(0)
-	var image_tex: ImageTexture = ImageTexture.create_from_image(img)
-	tex_rec.texture = null
-	tex_rec.set_texture(image_tex)
-	tex_rec.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	tex_rec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	if (num-1)<toppings_slots.size():
+		var tex_rec : TextureRect = toppings_slots[num-1].get_child(0)
+		var image_tex: ImageTexture = ImageTexture.create_from_image(img)
+
+		if tex_rec and image_tex:
+			tex_rec.texture = null
+			tex_rec.set_texture(image_tex)
+			tex_rec.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			tex_rec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	
 func set_objective_text(text : String):
 	$ObjectivePanel/Label.text = text

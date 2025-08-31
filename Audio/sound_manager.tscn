@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlka63qt8kskl"]
+[gd_scene load_steps=4 format=3 uid="uid://dlka63qt8kskl"]
 
 [ext_resource type="AudioStream" uid="uid://6xe7dsgad0cr" path="res://Audio/click4.ogg" id="1_jrxtm"]
+[ext_resource type="AudioStream" uid="uid://dea8fli51vjw3" path="res://Audio/Magic Scout Farm.mp3" id="2_g26qm"]
+[ext_resource type="AudioStream" uid="uid://dwp8odr71jech" path="res://Audio/Collect Crystal by Axilirate.wav" id="3_t2mvv"]
 
 [node name="SoundManager" type="Node"]
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_jrxtm")
+volume_db = 1.0
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g26qm")
+volume_db = -15.0
+autoplay = true
+
+[node name="CompleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t2mvv")
+volume_db = -3.0
