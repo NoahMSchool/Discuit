@@ -1,6 +1,7 @@
 # Discuit
-Created for my first Game Jam in a week - Brackys Game Jam 2025.2
-See and play it on my Itch page here: https://themandokitty.itch.io/
+* Created for my first Game Jam in a week - Brackey's Game Jam 2025.2
+* See and play it on my Itch page here: https://themandokitty.itch.io/
+* Brackey's Entry Page here: https://itch.io/jam/brackeys-14/rate/3851698
 
 <img width="300" height="628" alt="image" src="https://github.com/user-attachments/assets/1ff5fcfc-7c6f-4ddc-93d3-8144b9f2eb47" />
 
